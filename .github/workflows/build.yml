@@ -2,9 +2,9 @@ name: Build Delphi Project
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -15,4 +15,4 @@ jobs:
 
       - name: Build with MSBuild
         run: |
-          & "C:\Program Files (x86)\Embarcadero\Studio\23.0\bin\msbuild.exe" XebiaDelphiDemo1.dproj /t:Build /p:Config=Debug /p:Platform=Win32
+          & msbuild XebiaDelphiDemo1.dproj /t:Build /p:Config=Debug /p:Platform=Win32
