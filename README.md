@@ -19,6 +19,7 @@ To build Delphi projects with GitHub Actions, you need a Windows machine with De
    - Install Delphi (RAD Studio) 23.0 or your required version.
    - Ensure the Delphi command-line tools (like `msbuild.exe`) are available in the default installation path or update the workflow accordingly.
    - Make sure all required libraries and dependencies for your project are installed.
+   - register all ENV vars by executing `rsvars.bat` in the Delphi installation directory, e.g., `C:\Program Files (x86)\Embarcadero\Studio\23.0\bin\rsvars.bat`.
 
 2. **Register the Self-hosted Runner with GitHub**
    - Go to your repository on GitHub.
