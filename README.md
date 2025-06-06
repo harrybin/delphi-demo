@@ -34,4 +34,5 @@ For more details, see the [GitHub documentation on self-hosted runners](https://
 
 ## Notes
 - Ensure all dependencies and required environment variables are set up on the self-hosted runner.
-- The build output will be in the `Win32\Debug` or `Win32\Release` folder depending on the configuration.
+- The build output will be in the `Win64\Debug` or `Win64\Release` folder depending on the configuration.
+- The workflow now uses `rsvars.bat` to properly initialize the Delphi environment, which is required for command-line compilation to work correctly.
