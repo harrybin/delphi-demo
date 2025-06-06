@@ -15,14 +15,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Delphi environment and  Build with MSBuild
-        shell: cmd
         run: |
-          call "C:\Program Files (x86)\Embarcadero\Studio\23.0\bin\rsvars.bat"
-          msbuild XebiaDelphiDemo1.dproj /t:Build /p:Config=Debug /p:Platform=Win64
-          dir
-          cd Win64/Debug
-          dir
-
+          $env:BDS = "C:\Program Files (x86)\Embarcadero\Studio\23.0"
+          & msbuild XebiaDelphiDemo1.dproj /t:Build /p:Config=Debug /p:Platform=Win64
       - name: upload artifacts
         uses: actions/upload-artifact@v4
         with:
