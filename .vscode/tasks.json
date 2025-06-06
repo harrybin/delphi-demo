@@ -64,6 +64,12 @@
 					}
 				}
 			]
+		},
+		{
+			"label": "Launch Lazarus IDE",
+			"type": "shell",
+			"command": "C:/lazarus/lazarus.exe XebiaDelphiDemo1.lpi",
+			"group": "none"
 		}
 	]
 }
