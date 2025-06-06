@@ -1,13 +1,13 @@
 # Building a **Delphi** project with GitHub Actions
-- Compile and Debug with VSCode
-- use GitHub Copilot agent for the Delphi project
-- usej GitHub coding agent for the Delphi project
+- Compile and Debug with **VSCode**
+- use GitHub **Copilot agent** for the Delphi project
+- use GitHub **coding agent** for the Delphi project
 
 
 
 ## Additions
 
-- **Planned Feature:** Extend the calculator with a typical numpad interface (digits 0-9, decimal point) and include buttons for all currently supported operators. The numpad will resemble a standard calculator layout, allowing users to input numbers and operations easily. All existing operators will be accessible via the numpad, and the UI will be updated accordingly.
+- Coding agent can now be used on GitHub to assist with Delphi code.
 - **Debugging & Build:** Updated launch configurations for Lazarus Win64 builds and tests using GDB and pre-launch build tasks.
 
 ## Building with GitHub Actions
