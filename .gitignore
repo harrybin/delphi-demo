@@ -13,8 +13,6 @@
 *.map
 *.tds
 *.drc
-*.res
-*.rsm
 *.stat
 *.dcp
 *.bpi
