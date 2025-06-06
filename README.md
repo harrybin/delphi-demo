@@ -1,13 +1,16 @@
-# XebiaDelphiDemo1
+# Building a **Delphi** project with GitHub Actions
+- Compile and Debug with VSCode
+- use GitHub Copilot agent for the Delphi project
+- usej GitHub coding agent for the Delphi project
 
-This is a sample Delphi project.
 
-## Recent Updates (June 6, 2025)
+
+## Additions
 
 - **Planned Feature:** Extend the calculator with a typical numpad interface (digits 0-9, decimal point) and include buttons for all currently supported operators. The numpad will resemble a standard calculator layout, allowing users to input numbers and operations easily. All existing operators will be accessible via the numpad, and the UI will be updated accordingly.
 - **Debugging & Build:** Updated launch configurations for Lazarus Win64 builds and tests using GDB and pre-launch build tasks.
 
-## Building a Delphi project with GitHub Actions
+## Building with GitHub Actions
 
 To build this Delphi project using GitHub Actions, you need to use a self-hosted Windows runner with Lazarus installed, as GitHub-hosted runners do not include Lazarus by default.
 
