@@ -13,7 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build with MSBuild
+      - name: Set up Delphi environment
         run: |
           & "C:\Program Files (x86)\Embarcadero\Studio\23.0\bin\rsvars.bat"
+      - name: Build with MSBuild
+        run: |
           & msbuild XebiaDelphiDemo1.dproj /t:Build /p:Config=Debug /p:Platform=Win64
