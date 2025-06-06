@@ -1,5 +1,7 @@
 unit Calc;
 
+{$MODE Delphi}
+
 interface
 
 uses

@@ -6,64 +6,63 @@ object Form1: TForm1
   Caption = 'Form1'
   ClientHeight = 180
   ClientWidth = 296
-  LCLVersion = '4.0.0.4'
+  LCLVersion = '2.0.12.0'
   object LabelOp1: TLabel
     Left = 18
-    Height = 15
     Top = 8
     Width = 58
+    Height = 15
     Caption = 'Operand 1:'
   end
   object Labelop2: TLabel
     Left = 170
-    Height = 15
     Top = 8
     Width = 58
+    Height = 15
     Caption = 'Operand 2:'
   end
   object LabelRes: TLabel
     Left = 170
-    Height = 15
     Top = 108
     Width = 35
+    Height = 15
     Caption = 'Result:'
   end
   object ButtonCalc: TButton
     Left = 20
-    Height = 25
     Top = 60
     Width = 75
+    Height = 25
     Caption = 'Calculate'
-    TabOrder = 4
     OnClick = ButtonCalcClick
   end
   object EditOp1: TEdit
     Left = 18
-    Height = 23
     Top = 28
     Width = 120
+    Height = 23
     TabOrder = 0
   end
   object EditOp2: TEdit
     Left = 170
-    Height = 23
     Top = 28
     Width = 120
+    Height = 23
     TabOrder = 1
   end
   object EditResult: TEdit
     Left = 170
-    Height = 23
     Top = 128
     Width = 120
-    ReadOnly = True
+    Height = 23
     TabOrder = 2
+    ReadOnly = True
   end
   object ComboBoxOperation: TComboBox
     Left = 20
-    Height = 23
     Top = 100
     Width = 120
+    Height = 23
     ItemHeight = 0
     Items.Strings = (
       '+'

@@ -1,11 +1,9 @@
 unit CalcTests;
 
-{$MODE Delphi}
-
 interface
 
 uses
-  SysUtils, Calc;
+  System.SysUtils, Calc;
 
 type
   TCalcTests = class
