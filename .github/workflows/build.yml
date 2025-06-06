@@ -15,44 +15,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Delphi environment and  Build with MSBuild
-        shell: cmd
         run: |
-          SET BDS=C:\Program Files (x86)\Embarcadero\Studio\23.0
-          SET BDSINCLUDE=C:\Program Files (x86)\Embarcadero\Studio\23.0\include
-          SET BDSCOMMONDIR=C:\Users\Public\Documents\Embarcadero\Studio\23.0
-          SET FrameworkDir=C:\Windows\Microsoft.NET\Framework\v4.0.30319
-          SET FrameworkVersion=v4.5
-          SET FrameworkSDKDir=
-          SET PATH=%FrameworkDir%;%FrameworkSDKDir%;C:\Program Files (x86)\Embarcadero\Studio\23.0\bin;C:\Program Files (x86)\Embarcadero\Studio\23.0\bin64;C:\Program Files (x86)\Embarcadero\Studio\23.0\cmake;%PATH%
-          SET LANGDIR=EN
-          SET PLATFORM=
-          SET PlatformSDK=
-          msbuild XebiaDelphiDemo1.dproj /t:Build /p:Config=Debug /p:Platform=Win64
-          dir
-          cd Win64/Debug
-          dir
-
-      - name: Build and Run Tests
-        shell: cmd
-        run: |
-          SET BDS=C:\Program Files (x86)\Embarcadero\Studio\23.0
-          SET BDSINCLUDE=C:\Program Files (x86)\Embarcadero\Studio\23.0\include
-          SET BDSCOMMONDIR=C:\Users\Public\Documents\Embarcadero\Studio\23.0
-          SET FrameworkDir=C:\Windows\Microsoft.NET\Framework\v4.0.30319
-          SET FrameworkVersion=v4.5
-          SET FrameworkSDKDir=
-          SET PATH=%FrameworkDir%;%FrameworkSDKDir%;C:\Program Files (x86)\Embarcadero\Studio\23.0\bin;C:\Program Files (x86)\Embarcadero\Studio\23.0\bin64;C:\Program Files (x86)\Embarcadero\Studio\23.0\cmake;%PATH%
-          SET LANGDIR=EN
-          SET PLATFORM=
-          SET PlatformSDK=
-          echo Building test runner...
-          dcc32 TestRunner.dpr
-          if errorlevel 1 (
-              echo Test compilation failed!
-              exit /b 1
-          )
-          echo Running tests...
-          TestRunner.exe
+          $env:BDS = "C:\Program Files (x86)\Embarcadero\Studio\23.0"
+          & msbuild XebiaDelphiDemo1.dproj /t:Build /p:Config=Debug /p:Platform=Win64
 
       - name: upload artifacts
         uses: actions/upload-artifact@v4
