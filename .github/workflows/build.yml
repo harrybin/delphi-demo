@@ -9,14 +9,18 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build with Lazarus lazbuild
-        run: |
-          C:/lazarus/lazbuild.exe XebiaDelphiDemo1.lpi --bm=Default
+      - name: Install Lazarus
+        uses: sxmxta/lazarus@v1
+        with:
+          lazarus-version: stable
+
+      - name: Build with lazbuild
+        run: lazbuild XebiaDelphiDemo1.lpi --bm=Default
 
       - name: upload artifacts
         uses: actions/upload-artifact@v4
