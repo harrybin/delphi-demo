@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Lazarus Win64 TestRunner",
+            "type": "gdb",
+            "request": "launch",
+            "target": "${workspaceFolder}/lib/x86_64-win64/TestRunner.exe",
+            "cwd": "${workspaceFolder}",
+            "valuesFormatting": "parseText",
+            "stopAtEntry": false,
+            "gdbpath": "C:/lazarus/mingw/x86_64-win64/bin/gdb.exe"
+        },
+        {
+            "name": "Debug Lazarus Win64 Main App",
+            "type": "gdb",
+            "request": "launch",
+            "target": "${workspaceFolder}/lib/x86_64-win64/XebiaDelphiDemo1.exe",
+            "cwd": "${workspaceFolder}",
+            "valuesFormatting": "parseText",
+            "stopAtEntry": false,
+            "gdbpath": "C:/lazarus/mingw/x86_64-win64/bin/gdb.exe"
+        }
+    ]
+}

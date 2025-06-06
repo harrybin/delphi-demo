@@ -1,0 +1,69 @@
+{
+	"version": "2.0.0",
+	"inputs": [
+		{
+			"id": "emulatorFolder",
+			"type": "pickString",
+			"description": "Select the emulator folder",
+			"options": [
+				"RELEASE",
+				"DEBUG",
+			],
+			"default": "K5100 wrist bevel and unloader"
+		}
+	],
+	"tasks": [
+		{
+			"label": "Run Win32",
+			"type": "shell",
+			"command": "${workspaceFolder}\\Win32\\Debug\\XebiaDelphiDemo1.exe",
+			"group": "none"
+		},
+		{
+			"label": "Build Lazarus Win64",
+			"type": "shell",
+			"command": "C:/lazarus/lazbuild.exe XebiaDelphiDemo1.lpi --bm=Default",
+			"group": "build",
+			"problemMatcher": [
+				{
+					"owner": "lazbuild",
+					"fileLocation": [
+						"relative",
+						"${workspaceFolder}"
+					],
+					"pattern": {
+						"regexp": "^(.+?)\\((\\d+),(\\d+)\\) (Fatal|Error|Warning): (.+)$",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"severity": 4,
+						"message": 5
+					}
+				}
+			]
+		},
+		{
+			"label": "Build Lazarus Tests Win64",
+			"type": "shell",
+			"command": "C:/lazarus/lazbuild.exe TestRunner.lpi --bm=Default",
+			"group": "build",
+			"problemMatcher": [
+				{
+					"owner": "lazbuild",
+					"fileLocation": [
+						"relative",
+						"${workspaceFolder}"
+					],
+					"pattern": {
+						"regexp": "^(.+?)\\((\\d+),(\\d+)\\) (Fatal|Error|Warning): (.+)$",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"severity": 4,
+						"message": 5
+					}
+				}
+			]
+		}
+	]
+}
