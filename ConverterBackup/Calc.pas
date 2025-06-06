@@ -3,7 +3,8 @@ unit Calc;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
   TForm1 = class(TForm)
@@ -32,20 +33,18 @@ var
 
 implementation
 
-{$R *.lfm}
+{$R *.dfm}
 
 
 
 procedure TForm1.ButtonCalcClick(Sender: TObject);
-var
-  op1, op2: integer;
 begin
-  op1 := StrToInt(EditOp1.Text);
-  op2 := StrToInt(EditOp2.Text);
-  if ComboBoxOperation.ItemIndex = 0 then Add(op1, op2);
-  if ComboBoxOperation.ItemIndex = 1 then Mult(op1, op2);
-  if ComboBoxOperation.ItemIndex = 2 then Subtract(op1, op2);
-  if ComboBoxOperation.ItemIndex = 3 then Divide(op1, op2);
+  var op1 := StrToInt( EditOp1.Text);
+  var op2 := StrToInt(EditOp2.Text);
+  if ComboBoxOperation.ItemIndex = 0 then Add(op1,op2);
+  if ComboBoxOperation.ItemIndex = 1 then Mult(op1,op2);
+  if ComboBoxOperation.ItemIndex = 2 then Subtract(op1,op2);
+  if ComboBoxOperation.ItemIndex = 3 then Divide(op1,op2);
 
 
 end;
