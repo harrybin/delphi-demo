@@ -15,7 +15,9 @@ jobs:
 
       - name: Set up Delphi environment
         run: |
-          "C:\Program Files (x86)\Embarcadero\Studio\23.0\bin\rsvars.bat"
+          @SET BDS=C:\Program Files (x86)\Embarcadero\Studio\23.0
+          @SET BDSINCLUDE=C:\Program Files (x86)\Embarcadero\Studio\23.0\include
+          @SET BDSCOMMONDIR=C:\Users\Public\Documents\Embarcadero\Studio\23.0
           echo %BDS%
       - name: Build with MSBuild
         run: |
