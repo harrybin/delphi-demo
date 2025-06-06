@@ -74,6 +74,8 @@ object Form1: TForm1
     Text = 'Add'
     Items.Strings = (
       'Add'
-      'Mult')
+      'Mult'
+      'Subtract'
+      'Divide')
   end
 end

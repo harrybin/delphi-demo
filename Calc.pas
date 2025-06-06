@@ -19,6 +19,8 @@ type
     procedure ButtonCalcClick(Sender: TObject);
     procedure Add( op1: integer; op2: integer);
     procedure Mult( op1: integer; op2: integer);
+    procedure Subtract( op1: integer; op2: integer);
+    procedure Divide( op1: integer; op2: integer);
 
   private
     { Private declarations }
@@ -41,6 +43,8 @@ begin
   var op2 := StrToInt(EditOp2.Text);
   if ComboBoxOperation.ItemIndex = 0 then Add(op1,op2);
   if ComboBoxOperation.ItemIndex = 1 then Mult(op1,op2);
+  if ComboBoxOperation.ItemIndex = 2 then Subtract(op1,op2);
+  if ComboBoxOperation.ItemIndex = 3 then Divide(op1,op2);
 
 
 end;
@@ -53,6 +57,19 @@ end;
 procedure TForm1.Mult( op1: integer; op2: integer);
 begin
   EditResult.Text := IntToStr( op1 * op2);
+end;
+
+procedure TForm1.Subtract( op1: integer; op2: integer);
+begin
+  EditResult.Text := IntToStr( op1 - op2);
+end;
+
+procedure TForm1.Divide( op1: integer; op2: integer);
+begin
+  if op2 = 0 then
+    EditResult.Text := 'Error: Division by zero'
+  else
+    EditResult.Text := IntToStr( op1 div op2);
 end;
 
 end.
