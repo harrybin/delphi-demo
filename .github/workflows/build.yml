@@ -20,3 +20,9 @@ jobs:
           @SET BDSINCLUDE=C:\Program Files (x86)\Embarcadero\Studio\23.0\include
           @SET BDSCOMMONDIR=C:\Users\Public\Documents\Embarcadero\Studio\23.0
           msbuild XebiaDelphiDemo1.dproj /t:Build /p:Config=Debug /p:Platform=Win64
+
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: DelphiBuildArtifacts
+          path: Win64\Debug
